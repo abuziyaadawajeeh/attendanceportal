@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+}
+.cname,
+.fname,
+.dates {
+  color: rgb(197, 197, 197);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.cname {
+  padding: 1rem;
+  background-color: black;
+  display: inline-block;
+  margin-bottom: 2px;
+  margin-right: 2px;
+}
+.fname {
+  padding: 1rem;
+  display: inline-block;
+  background-color: rgb(36, 32, 32);
+  margin-bottom: 2px;
+}
+.dates {
+  padding: 1rem;
+  background-color: rgb(24, 23, 44);
+  margin-bottom: 10px;
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.item {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
