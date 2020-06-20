@@ -1,5 +1,3 @@
-or references in the same repository. Learn more
-
 <?php
 //file to establish connection with the database
 $dbservername="localhost";
