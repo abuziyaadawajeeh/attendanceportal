@@ -64,7 +64,14 @@ if(!isset($_SESSION["rollno"]) )
         <span class="cname">coursename</span><span class="fname">facultyname</span>
     </div>
     <div class="dates">
-        dates absent
+        <?php 
+         $mydates = $_SESSION["dates"][2];
+         foreach($mydates as $date){
+             echo $date;
+             echo "<br/>";
+         }
+
+        ?>
     </div>
     <div class="item">
         <span class="cname">coursename</span><span class="fname">facultyname</span>

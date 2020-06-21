@@ -46,19 +46,23 @@ else
         there: 
         include ("conn.php");
 
-        $finalarray; 
+        $finalarray = array(); 
          function assarrpush($array, $key, $value){
             $array[$key]=$value;
             return $array;
         }
           function dostuff($cid){
-            $sql= "SELECT date from attendance where cid=".$cid." and rollno=".$rollno." ";
-            include_once ("conn.php");
+        
+
+            $sql= "SELECT date from attendance where cid=$cid and rollno='".$GLOBALS["rollno"]."' ";
+            include ("conn.php");
+
             $rslt= mysqli_query($conn,$sql);
             $newarray = array();
             while($rows = mysqli_fetch_assoc($rslt))
                 array_push($newarray, $rows["date"]);
-            $finalarray = assarrpush($finalarray, $cid, $newarray);
+            
+            $GLOBALS["finalarray"] = assarrpush($GLOBALS["finalarray"], $cid, $newarray);
         }
 
         $query = " SELECT cid from course";
@@ -71,11 +75,11 @@ else
        
       
 
-        echo var_dump($finalarray);
+        $_SESSION["dates"] = $finalarray;
 
   
-        // header("location:../dashboard-student.php?loginsuccessful?".$_SESSION["name"]);
-        // exit();
+        header("location:../dashboard-student.php?loginsuccessful?".$_SESSION["name"]);
+        exit();
         }
         
         exit();
