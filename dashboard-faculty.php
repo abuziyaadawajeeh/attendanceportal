@@ -52,7 +52,7 @@ if(!isset($_SESSION["fid"]) )
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="#">Home</a>
         <a class="nav-link active" href="#">Take Attendance</a>&nbsp
-        <a class="nav-link active" href="#">View Attendance</a>&nbsp
+        <a class="nav-link active" href="view-attendance-faculty.php">View Attendance</a>&nbsp
 	<a class="nav-link active" href="#">Edit Attendance</a>&nbsp
 	<a class="nav-link active" href="chat-history-faculty.php">Query</a>&nbsp
 	<a class="nav-link active" href="./php/logout.php">Logout</a>&nbsp

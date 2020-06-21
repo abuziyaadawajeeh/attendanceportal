@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Chat History</title>
+    <title>View Attendance</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -43,8 +43,8 @@
     <link href="css/grid.css" rel="stylesheet">
 </head>
 <body class="py-4">
-<form action="chat-room-faculty.php">
-    <input class="go-to" type="submit" value="Go to Chat Room → "/>
+<form action="dashboard-parent.php">
+    <input class="go-to" type="submit" value="Go Back → "/>
 </form>
 <div class="container" id="containers">
   
@@ -55,23 +55,23 @@
 <?php
         include ("php/conn.php");
 	session_start();
-	$query1 = "select uname from parent;";
+	$query1 = "select cid,cname from course;";
 	$statement1 = mysqli_query($conn, $query1);
-	$query2 = "select fid,uname,message,frm,msgto from chatroom where fid = '".$_SESSION["fid"]."'";
+	$query2 = "select * from attendance where rollno = '".$_SESSION["rollno"]."'";
 	$statement2 = mysqli_query($conn, $query2);
-    echo('<h2>Chat History :-</h2><table class="table table-dark">');
+    echo('<h2>Absent Dates :-</h2><table class="table table-dark">');
 
     foreach($statement1 as $line)
     {
 	foreach($statement2 as $line1)
 	{
-        if($line['uname'] == $line1['uname']) {
-        echo('<tr><td>' . 'FROM  :     ' . htmlspecialchars($line1['frm']));
-	echo('</td><td>' . 'TO  :     ' . htmlspecialchars($line1['msgto']));
-        echo('</td><td>' . 'MESSAGE  :     ' . htmlspecialchars($line1['message']).'</td></tr>'); }
+        if($line['cid'] == $line1['cid']) {
+	echo('<tr><td>' . 'COURSE NAME:' . htmlspecialchars($line['cname']));
+	echo('</td><td>' . 'COURSE ID:' . htmlspecialchars($line['cid']));
+        echo('</td><td>' . 'DATE:' . htmlspecialchars($line1['date']).'</td></tr>'); }
 	}
      }
-?>
+?> 
 </div>
 </body>
-</html>
+</html>  

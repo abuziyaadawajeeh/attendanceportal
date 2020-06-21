@@ -51,7 +51,7 @@ if(!isset($_SESSION["rollno"]) )
       <h3 class="masthead-brand">ATTENDANCE PORTAL </h3>
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link active" href="#">View Attendance</a>&nbsp
+        <a class="nav-link active" href="view-attendance-student.php">View Attendance</a>&nbsp
 	<a class="nav-link active" href="./php/logout.php">Logout</a>&nbsp
       </nav>
     </div>
