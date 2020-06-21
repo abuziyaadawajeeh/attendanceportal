@@ -40,6 +40,8 @@ else
         session_start();
         $_SESSION["rollno"]=$row["rollno"];
         $_SESSION["uname"]=$row["uname"];
+        $user ="select fid,name from faculty";
+        $_SESSION["info"] = $user;
 
         there: 
         include ("conn.php");
