@@ -150,7 +150,7 @@ body {
 .container {
   width: 660px;
   position: relative;
-  margin-top:30px;
+  margin:0 auto;
   
 }
 
