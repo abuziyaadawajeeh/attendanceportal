@@ -54,7 +54,7 @@ if(!isset($_SESSION["fid"]) )
         <a class="nav-link active" href="#">Take Attendance</a>&nbsp
         <a class="nav-link active" href="#">View Attendance</a>&nbsp
 	<a class="nav-link active" href="#">Edit Attendance</a>&nbsp
-	<a class="nav-link active" href="#">Query</a>&nbsp
+	<a class="nav-link active" href="chat-history-faculty.php">Query</a>&nbsp
 	<a class="nav-link active" href="./php/logout.php">Logout</a>&nbsp
       </nav>
     </div>
