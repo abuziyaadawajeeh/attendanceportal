@@ -42,8 +42,8 @@ else
         $_SESSION["name"]=$row["name"];
 	$_SESSION["sno"]=$row["sno"];
 	$_SESSION["did"]=$row["did"];
-
-        there: 
+        
+	there: 
         include ("conn.php");
 
   
