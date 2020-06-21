@@ -70,6 +70,18 @@
 	echo('</td><td>' . 'COURSE ID:' . htmlspecialchars($line['cid']));
         echo('</td><td>' . 'DATE:' . htmlspecialchars($line1['date']).'</td></tr>'); }
 	}
+	$tempi=$line['cid'];
+	$query7 = "select * from attendance where cid = $tempi and rollno ='".$_SESSION["rollno"]."'";
+	if ($result22=mysqli_query($conn,$query7))
+  	{
+  	// Return the number of rows in result set
+  	$rowcount=mysqli_num_rows($result22);
+  	if($rowcount>10) {
+	printf("Cannot write Course No:%s exam as your son/daughter didn't attend %d lecures.\n",$line['cid'],$rowcount);
+	}
+  	// Free result set
+  	mysqli_free_result($result22);
+  	} 
      }
 ?> 
 </div>
